@@ -1,5 +1,5 @@
 lanschool\_class\_gen
-<https://github.com/korylprince/lanschool_gen>
+<https://github.com/korylprince/lanschool_class_gen>
 
 [Lanschool](http://www.lanschool.com/) is a great way to monitor students, but can be it can be a pain for teachers to create class lists. Currently Lanschool only allows you to add a student to a class if they are online. This project is a small web interface where a teacher can create and edit class lists without students needing to be online. The server queries an LDAP server (i.e. Active Directory) to search for students.
 
@@ -68,7 +68,7 @@ Once configured correctly, issue:
 
 to start the service. You may view the log file at `/var/log/upstart/lanschool.log`. You may access the server at the IP address and port you specified. I recommend you use a webserver like nginx to proxy requests.
 
-If you have any issues or questions (or want to make it better), email the email address below, or open an issue at: <https://github.com/korylprince/lanschool_gen/issues>
+If you have any issues or questions (or want to make it better), email the email address below, or open an issue at: <https://github.com/korylprince/lanschool_class_gen/issues>
 
 #Caveats#
 
