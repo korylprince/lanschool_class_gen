@@ -1,0 +1,22 @@
+<div id="import-wrapper" class="clearfix">
+    <div class="col-md-4 col-md-offset-4">
+        <h2 class="section-header">Import Class List</h2>
+    </div>
+    <div id="import-form-wrapper" class="col-md-4 col-md-offset-4 wrapper-border">
+        <form id="import-form" method="POST" action="{{ url_for("import_file") }}" role="form" enctype="multipart/form-data">
+            {{ g.import_form.hidden_tag() }}
+            {% for field in g.import_form %}
+                {% if field.type != "CSRFTokenField" %}
+                <div class="form-group{{ " has-error" if field.errors else "" }}">
+                        {{ field.label }}
+                        {% for error in field.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                        {{ field(class_="form-control file-import", placeholder=field.description) }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <button id="import-button" type="submit" class="btn btn-primary">Import</button>
+        </form>
+    </div>
+</div>

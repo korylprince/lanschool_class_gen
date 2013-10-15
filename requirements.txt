@@ -1,0 +1,7 @@
+Flask==0.10.1
+Flask-Assets==0.8
+Flask-Bootstrap==3.0.0.1
+Flask-WTF==0.9.3
+cssmin>=0.1.4
+jsmin>=2.0.6
+python-ldap>=2.3.13

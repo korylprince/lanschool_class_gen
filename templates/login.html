@@ -1,0 +1,23 @@
+<div id="login-wrapper" class="col-md-4 col-md-offset-4 wrapper-border">
+    <h2>Please Sign In</h2>
+    <form id="login-form" method="POST" action="{{ url_for("login") }}" role="form">
+        {{ g.login_form.hidden_tag() }}
+        {% for field in g.login_form %}
+            {% if field.type != "CSRFTokenField" %}
+            <div class="form-group{{ " has-error" if field.errors else "" }}">
+                    {{ field.label }}
+                    {% for error in field.errors %}
+                    <span class="help-block">{{ error }}</span>
+                    {% endfor %}
+                    {{ field(class_="form-control", placeholder=field.description) }}
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% if login_error %}
+            <div class="form-group has-error">
+                <span class="help-block">{{ login_error }}</span>
+            </div>
+        {% endif %}
+        <button id="login-button" type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+</div>

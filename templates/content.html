@@ -1,0 +1,10 @@
+<div id="content">
+    {% if not session.get("username") %}
+        {% include "login.html" %}
+    {% else %}
+        {% include "search.html" %}
+        {% include "result.html" %}
+        {% include "import.html" %}
+    {% endif %}
+</div>
+

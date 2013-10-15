@@ -1,0 +1,5 @@
+.env
+*.swp
+*.pyc
+static/min/*
+static/.webassets-cache/*

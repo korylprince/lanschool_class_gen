@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%- block scripts %}
+{{super()}}
+{% assets "js_all" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{%- if g.scroll_to %}
+<script type="text/javascript">
+$( document ).ready(function() {
+        $('html, body').scrollTop( $("{{ g.scroll_to }}").offset().top );
+});
+</script>
+{%- endif %}
+{%- endblock scripts %}
+{%- block styles %}
+{{super()}}
+{% assets "css_all" %}
+    <link href="{{ ASSET_URL }}" rel="stylesheet">
+{% endassets %}
+{%- endblock styles %}
+
+{% block title %}Lanschool Class List Generator{% endblock %}
+
+{% block navbar %}
+    {% include "nav.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "content.html" %}
+{% endblock %}

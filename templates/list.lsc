@@ -1,0 +1,6 @@
+[Lanschool Class List]
+{%- for s in session.get("students", []) %}
+Student_{{ session.get("students", []).index(s) }}={{ s["username"] }}
+{%- endfor %}
+Type=0
+Profile=

@@ -1,0 +1,22 @@
+<div id="export-wrapper" class="clearfix">
+    <div class="col-md-4 col-md-offset-4">
+        <h2 class="section-header">Download Class List</h2>
+    </div>
+    <div id="export-form-wrapper" class="col-md-4 col-md-offset-4 wrapper-border">
+        <form id="export-form" method="POST" action="{{ url_for("export_file") }}" role="form">
+            {{ g.export_form.hidden_tag() }}
+            {% for field in g.export_form %}
+                {% if field.type != "CSRFTokenField" %}
+                <div class="form-group{{ " has-error" if field.errors else "" }}">
+                        {{ field.label }}
+                        {% for error in field.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                        {{ field(class_="form-control", placeholder=field.description) }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <button id="export-button" type="submit" class="btn btn-primary">Download</button>
+        </form>
+    </div>
+</div>
