@@ -3,7 +3,7 @@ lanschool\_class\_gen
 
 [Lanschool](http://www.lanschool.com/) is a great way to monitor students, but can be it can be a pain for teachers to create class lists. Currently Lanschool only allows you to add a student to a class if they are online. This project is a small web interface where a teacher can create and edit class lists without students needing to be online. The server queries an LDAP server (i.e. Active Directory) to search for students.
 
-This project is built upon the excellent [Flask](http://flask.pocoo.org/) with the [Flask-Bootstrap](https://github.com/mbr/flask-bootstrap), [Flask-Assets](http://elsdoerfer.name/docs/flask-assets/), and [Flask-WTF](https://flask-wtf.readthedocs.org/en/latest/) extensions.
+This project is built upon the excellent [Flask](http://flask.pocoo.org/) microframework with the [Flask-Bootstrap](http://pythonhosted.org/Flask-Bootstrap/), [Flask-Assets](http://elsdoerfer.name/docs/flask-assets/), and [Flask-WTF](https://flask-wtf.readthedocs.org/en/latest/) extensions.
 
 #Installation#
 
