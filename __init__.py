@@ -101,6 +101,7 @@ def add():
             else:
                 # if single student is returned add to session
                 session['students'] = sorted(session.get('students', []) + [s], key=lambda x:x["name"])
+                search_error = "{0} ({1}) added to list".format(s['name'], s['username'])
         except SIZELIMIT_EXCEEDED:
             search_error = "Your search returned too many results. Please narrow your search"
         except:
