@@ -52,7 +52,7 @@ function alertBox(target) {
 // Login Button
 $("body").on('submit','#login-form', function(e){
     e.preventDefault();
-    $(this).children("button").html('<span class="glyphicon glyphicon-cog icon-spin"></span>');
+    $(this).children("#login-button").html('<span class="glyphicon glyphicon-cog icon-spin"></span>');
     $.ajax({
         type: "POST",
         url: get_url("login"),
@@ -78,7 +78,7 @@ $("body").on('click','#logout-link', function(e){
 // Student Search Button
 $("body").on('submit','#add-student-form', function(e){
     e.preventDefault();
-    $(this).children("button").html('<span class="glyphicon glyphicon-cog icon-spin"></span>');
+    $(this).children("#add-student-button").html('<span class="glyphicon glyphicon-cog icon-spin"></span>');
     $.ajax({
         type: "POST",
         url: get_url("add"),
