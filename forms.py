@@ -6,14 +6,6 @@ from wtforms import StringField, PasswordField
 from wtforms import validators, ValidationError
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 
-def SafeFile(message=None):
-
-    def _safe(form, field):
-        if field.data != escape(secure_filename(field.data)):
-            raise ValidationError(message)
-
-    return _safe
-
 class LoginForm(Form):
     username = StringField('Username', [
         validators.InputRequired("You must enter a username."),
@@ -36,8 +28,7 @@ class DeleteForm(Form):
 
 class ExportForm(Form):
     filename = StringField('Class Name', [
-        validators.InputRequired("You must supply a Class Name."),
-        SafeFile(message="You must supply a valid Class Name.")],
+        validators.InputRequired("You must supply a Class Name.")],
         description="Class Name")
 
 class ImportForm(Form):

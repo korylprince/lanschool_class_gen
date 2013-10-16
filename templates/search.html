@@ -1,8 +1,6 @@
-<div id="search-wrapper" class="clearfix">
-    <div class="col-md-4 col-md-offset-4">
-        <h2 class="section-header">Search for Students</h2>
-    </div>
-    <div id="add-student-wrapper" class="col-md-4 col-md-offset-4">
+<div id="search-wrapper">
+    <h2 class="section-header">Search for Students</h2>
+    <div id="add-student-wrapper" class="wrapper-border">
         <form id="add-student-form" method="POST" action="{{ url_for("add") }}" role="form">
             {{ g.search_form.hidden_tag() }}
             {% for field in g.search_form %}
@@ -22,15 +20,17 @@
                 </div>
             {% endif %}
             <button id="add-student-button" type="submit" class="btn btn-primary">Search</button>
+            <button id="help-search" type="button" class="btn btn-info help">Help</button>
         </form>
+
+        {% if selection %}
+            <div id="selection-wrapper">
+            <h4>Click to Add Student</h4>
+                {% for b in selection %}
+                <button class="btn btn-primary selection-button" data-username="{{ b["username"] }}"><span class="glyphicon glyphicon-plus"></span> {{ b["name"] }} ({{ b["username"] }})</button>
+                {% endfor %}
+            </div>
+        {% endif %}
+
     </div>
 </div>
-
-{% if selection %}
-<div id="selection-wrapper" class="col-md-6 col-md-offset-3">
-<h4>Click to Add Student</h4>
-    {% for b in selection %}
-    <button class="btn btn-primary selection-button" data-username="{{ b["username"] }}"><span class="glyphicon glyphicon-plus"></span> {{ b["name"] }} ({{ b["username"] }})</button>
-    {% endfor %}
-</div>
-{% endif %}

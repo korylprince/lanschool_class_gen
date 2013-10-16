@@ -1,14 +1,13 @@
 {% if session.get("students", []) %}
 <div id="result-wrapper">
-    <div class="col-md-4 col-md-offset-4">
-        <h2 class="section-header">Selected Students</h2>
-    </div>
-    <div id="student-wrapper" class="col-md-4 col-md-offset-4 wrapper-border">
+    <h2 class="section-header">Selected Students ({{ session["students"] | length }})</h2>
+    <div id="student-wrapper" class="wrapper-border">
         {{ g.delete_form.hidden_tag() }}
         {% for b in session.get("students", []) %}
         <button class="btn btn-primary student-button" data-username="{{ b["username"] }}">{{ b["name"] }} ({{ b["username"] }}) <span class="glyphicon glyphicon-remove-circle"></span></button>
         {% endfor %}
-        <button id="student-delete-all-button" class="btn btn-danger" data-target="#delete-all-modal" data-toggle="modal">Delete All <span class="glyphicon glyphicon-remove-circle"></span></button>
+        <button id="student-delete-all-button" class="btn btn-danger" data-target="#delete-all-modal" data-toggle="modal">Delete All</button>
+        <button id="help-delete" type="button" class="btn btn-info help">Help</button>
     </div>
 {% include "export.html" %}
 </div>

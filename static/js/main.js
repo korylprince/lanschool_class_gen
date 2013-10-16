@@ -75,7 +75,7 @@ $("body").on('click','#logout-link', function(e){
     });
 });
 
-// Student Search Buton
+// Student Search Button
 $("body").on('submit','#add-student-form', function(e){
     e.preventDefault();
     $(this).children("button").html('<span class="glyphicon glyphicon-cog icon-spin"></span>');
@@ -89,7 +89,7 @@ $("body").on('submit','#add-student-form', function(e){
     });
 });
 
-// Student Selection Add Buton
+// Student Selection Add Button
 $("body").on('click','.selection-button', function(e){
     e.preventDefault();
     var orig = encodeURIComponent($("#add-student-form input[name='search']").val());
@@ -109,7 +109,7 @@ $("body").on('click','.selection-button', function(e){
     });
 });
 
-// Student Delete Buton
+// Student Delete Button
 $("body").on('click','.student-button', function(e){
     e.preventDefault();
     var data = {
@@ -141,7 +141,7 @@ function unsetDanger(item) {
 $("body").on('mouseenter','.student-button', function(){setDanger(this);});
 $("body").on('mouseleave','.student-button', function(){unsetDanger(this);});
 
-// Student Delete All Buton
+// Student Delete All Button
 $("body").on('click','#delete-all-button', function(e){
     e.preventDefault();
     var data = {
@@ -158,4 +158,12 @@ $("body").on('click','#delete-all-button', function(e){
         error: alertBox("#search-wrapper"),
         dataType: "json"
     });
+});
+
+// Help Buttons
+$("body").on('click','.help', function(e){
+    var name = $(this).attr("id").split("-")[1];
+    $("#help-modal .modal-body div").addClass("hide");
+    $("#help-text-"+name).removeClass("hide");
+    $("#help-modal").modal("show");
 });

@@ -29,4 +29,33 @@ $( document ).ready(function() {
 
 {% block content %}
     {% include "content.html" %}
+    <div id="help-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Help</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="help-text-search" class="hide">
+                        <p>You can search for students by their username or their name. When searching by name you can use the <strong>&#42;</strong> as a wild vard. For instance <code>Jo* Smith</code> would match both <code>John Smith</code> and <code>Johnny Smith</code>.</p>
+                        <p>If your search returns more than one student, a list will be returned that will allow you to select the student you want.</p>
+                    </div>
+                    <div id="help-text-delete" class="hide">
+                        <p>Click on individual students to remove them from the list or click the <strong>Delete All</strong> button to remove all students at once.</p>
+                    </div>
+                    <div id="help-text-export" class="hide">
+                        <p>Once you have the students you want in your list, choose a file name and click the <strong>Download</strong> button to download your Class List.</p>
+                    </div>
+                    <div id="help-text-import" class="hide">
+                        <p>If you have a file you would like to modify, click the browse button to select it and then click the <strong>Import</strong> button to import the students to your current list. When importing a Class List, the students you have currently selected and the students in the file you import will be <strong>merged</strong>.</p>
+                        <p>Please note that only <code>.lsc</code> files can be uploaded, and only Class Lists based on <strong>username</strong> will work.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

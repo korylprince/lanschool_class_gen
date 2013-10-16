@@ -1,8 +1,6 @@
-<div id="export-wrapper" class="clearfix">
-    <div class="col-md-4 col-md-offset-4">
-        <h2 class="section-header">Download Class List</h2>
-    </div>
-    <div id="export-form-wrapper" class="col-md-4 col-md-offset-4 wrapper-border">
+<div id="export-wrapper" class="">
+    <h2 class="section-header">Download Class List</h2>
+    <div id="export-form-wrapper" class="wrapper-border">
         <form id="export-form" method="POST" action="{{ url_for("export_file") }}" role="form">
             {{ g.export_form.hidden_tag() }}
             {% for field in g.export_form %}
@@ -17,6 +15,7 @@
                 {% endif %}
             {% endfor %}
             <button id="export-button" type="submit" class="btn btn-primary">Download</button>
+            <button id="help-export" type="button" class="btn btn-info help">Help</button>
         </form>
     </div>
 </div>
