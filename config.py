@@ -73,6 +73,7 @@ set_env('LDAP_CACERTFILE', '/etc/ssl/certs/ca-certificates.crt', required=False)
 set_env('LOGIN_REGEX', '^[a-zA-Z0-9\-\._]+$', post=_re_compile)
 set_env('SEARCH_REGEX', '^[a-zA-Z0-9\-\._\* ]+$', post=_re_compile)
 set_env('SECRET', default=_secret_gen)
+set_env('USE_CDN', True)
 set_env('DEBUG', False)
 
 def _initialize():

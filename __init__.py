@@ -12,7 +12,7 @@ from flask.ext.assets import Environment, Bundle
 app = Flask(__name__)
 app.secret_key = SECRET
 app.debug = DEBUG
-app.config['BOOTSTRAP_SERVE_LOCAL'] = True
+app.config['BOOTSTRAP_SERVE_LOCAL'] = not USE_CDN
 
 Bootstrap(app)
 csrf = CsrfProtect(app)
