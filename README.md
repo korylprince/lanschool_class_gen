@@ -36,7 +36,7 @@ It is recommended you set `LSGEN_SECRET`. You can generate a new secret by runni
 
     python -c 'import os,base64;print base64.b64encode(os.urandom(64))'
 
-All configuration options are listed below:
+All configuration options are listed below (Note that `LSGEN_` is prepended to each option):
 
 <table>
     <th><tr><td>Name</td><td>Default</td><td>Description</td></tr></th>
