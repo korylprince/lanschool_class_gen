@@ -16,6 +16,12 @@ def _re_compile(expr):
     if expr is not None:
         return re.compile(expr)
 
+def _eval_boolean(val):
+    if val == True or val == False:
+        return val
+    else:
+        return eval(val)
+
 class RequiredConfigurationException(Exception):
     def __init__(self, name):
         self.name = name
@@ -73,8 +79,8 @@ set_env('LDAP_CACERTFILE', '/etc/ssl/certs/ca-certificates.crt', required=False)
 set_env('LOGIN_REGEX', '^[a-zA-Z0-9\-\._]+$', post=_re_compile)
 set_env('SEARCH_REGEX', '^[a-zA-Z0-9\-\._\* ]+$', post=_re_compile)
 set_env('SECRET', default=_secret_gen)
-set_env('USE_CDN', True, post=eval)
-set_env('DEBUG', False, post=eval)
+set_env('USE_CDN', True, post=_eval_boolean)
+set_env('DEBUG', False, post=_eval_boolean)
 
 def _initialize():
     ldap.set_option(ldap.OPT_SIZELIMIT, LDAP_SIZELIMIT)
