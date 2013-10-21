@@ -1,12 +1,13 @@
-//addes endsWith function in all browsers
-String.prototype.endsWith = function(suffix) {
+//adds endsWith function in all browsers
+String.prototype.endsWith = function (suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
 
 // takes data in form of selector -> html
 // replaces selector with html
 function rewrite(data) {
-    for (var key in data) {
+    var key;
+    for (key in data) {
         if (data.hasOwnProperty(key)) {
             $(key).replaceWith(data[key]);
         }
